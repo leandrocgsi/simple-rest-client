@@ -23,7 +23,6 @@ public class RecoveryDataWithURL {
     }
 
     private static void readXMLURL(String url) throws IOException {
-        
         HttpClient client = new DefaultHttpClient();
         HttpGet method = new HttpGet(url);
         HttpResponse httpResponse = client.execute(method);
@@ -38,7 +37,7 @@ public class RecoveryDataWithURL {
         XStream xStream = new XStream(new DomDriver());
         xStream.processAnnotations(AddressInfo.class);
         AddressInfo addressInfo = (AddressInfo) xStream.fromXML(inputStream);
-        System.out.println(addressInfo.getCity() + " - " + addressInfo.getStreet());
+        System.out.println(addressInfo.getCity().toUpperCase() + " - " + addressInfo.getStreet().toUpperCase());
         return addressInfo;
     }
 }

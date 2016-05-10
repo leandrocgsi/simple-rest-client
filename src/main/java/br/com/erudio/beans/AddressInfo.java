@@ -11,16 +11,22 @@ public class AddressInfo implements Serializable{
 	
 	@XStreamAlias("resultado")
     private String result;
+	
     @XStreamAlias("resultadotxt")
     private String resultTxt;
+    
     @XStreamAlias("uf")
     private String uf;
+    
     @XStreamAlias("cidade")
     private String city;
+    
     @XStreamAlias("bairro")
     private String town;
+    
     @XStreamAlias("tipologradouro")
     private String addressType;
+    
     @XStreamAlias("logradouro")
     private String street;
 
