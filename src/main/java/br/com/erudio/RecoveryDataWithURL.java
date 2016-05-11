@@ -7,7 +7,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -23,7 +23,7 @@ public class RecoveryDataWithURL {
     }
 
     private static void readXMLURL(String url) throws IOException {
-        HttpClient client = new DefaultHttpClient();
+        HttpClient client = HttpClientBuilder.create().build();
         HttpGet method = new HttpGet(url);
         HttpResponse httpResponse = client.execute(method);
         int statusCode = httpResponse.getStatusLine().getStatusCode();
